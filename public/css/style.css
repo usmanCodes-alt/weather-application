@@ -32,6 +32,11 @@ header a {
   text-decoration: none;
 }
 
+p a {
+  color: #888888;
+  text-decoration: none;
+}
+
 .potrait {
   width: 250px;
 }
@@ -47,4 +52,9 @@ button {
   background: #888888;
   color: white;
   padding: 8px;
+}
+
+p {
+  line-height: 25px;
+  font-size: 18px;
 }

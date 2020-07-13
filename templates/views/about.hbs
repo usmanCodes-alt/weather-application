@@ -12,7 +12,11 @@
 <body>
     <div class="main-content">
         {{>header}}
-        <img src="/images/robot.png" alt="robot image" class="potrait">
+        <p>
+            This website was created by {{name}}.<br>
+            The data that is provided to you comes from <a href="https://www.mapbox.com/">mapbox.com</a> and <a
+                href="https://openweathermap.org/">openweather.org</a> services.
+        </p>
         <p>{{message}}</p>
     </div>
     {{>footer}}
