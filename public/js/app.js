@@ -10,23 +10,21 @@ weatherForm.addEventListener("submit", (event) => {
   secondParagraph.textContent = "";
 
   firstParagraph.textContent = "Loading..";
-  fetch(`http://localhost:3000/weather?address=${search.value}`).then(
-    (response) => {
-      response.json().then((data) => {
-        if (data.error) {
-          firstParagraph.textContent = data.error;
-        } else {
-          firstParagraph.textContent = data.location;
-          secondParagraph.textContent =
-            "It's currently " +
-            data.temperature +
-            " degrees. " +
-            "Humidity level is " +
-            data.humidity +
-            ". \nDescription: " +
-            data.description;
-        }
-      });
-    }
-  );
+  fetch(`/weather?address=${search.value}`).then((response) => {
+    response.json().then((data) => {
+      if (data.error) {
+        firstParagraph.textContent = data.error;
+      } else {
+        firstParagraph.textContent = data.location;
+        secondParagraph.textContent =
+          "It's currently " +
+          data.temperature +
+          " degrees. " +
+          "Humidity level is " +
+          data.humidity +
+          ". \nDescription: " +
+          data.description;
+      }
+    });
+  });
 });

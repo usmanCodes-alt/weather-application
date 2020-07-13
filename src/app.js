@@ -3,6 +3,7 @@ const path = require("path");
 const hbs = require("hbs");
 const getWeather = require("./utils/get_weather_util");
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Paths for express config
 const pathToStatic = path.join(__dirname, "../public"); // Path to the static folder we want to server html from
@@ -75,6 +76,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server is up and running on port 3000");
+app.listen(port, () => {
+  console.log(`Server is up and running on port ${port}`);
 });
