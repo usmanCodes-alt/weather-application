@@ -19,8 +19,9 @@ weatherForm.addEventListener("submit", (event) => {
         secondParagraph.textContent =
           "It's currently " +
           data.temperature +
-          " degrees. " +
-          "Humidity level is " +
+          " degrees. Feels like " +
+          data.feelsLike +
+          ". Humidity level is " +
           data.humidity +
           ". \nDescription: " +
           data.description;

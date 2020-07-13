@@ -39,6 +39,7 @@ const forecast = (latitude, longitude, location, responseToWeb) => {
           temperature: data.main.temp,
           humidity: data.main.humidity,
           location: location,
+          feelsLike: data.main.feels_like,
         });
       }
     }
