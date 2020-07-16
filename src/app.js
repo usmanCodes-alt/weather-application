@@ -6,12 +6,12 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Paths for express config
-const pathToStatic = path.join(__dirname, "../public"); // Path to the static folder we want to server html from
-const hbsViewsPath = path.join(__dirname, "../templates/views"); // Path to hbs views
+const pathToStatic = path.join(__dirname, "../public");
+const hbsViewsPath = path.join(__dirname, "../templates/views");
 const partialsPath = path.join(__dirname, "../templates/partials");
 
 // Setup static directory to server
-app.use(express.static(pathToStatic)); //app.use() is used to configure the server to server html etc
+app.use(express.static(pathToStatic));
 
 // Setup handlebar engine and views location
 app.set("view engine", "hbs"); // setting up hbs
@@ -31,15 +31,6 @@ app.get("/about", (req, res) => {
   res.render("about", {
     title: "About",
     heading: "About",
-    name: "Usman",
-  });
-});
-
-app.get("/help", (req, res) => {
-  res.render("help", {
-    title: "Help",
-    heading: "Help",
-    message: "This is help message",
     name: "Usman",
   });
 });
